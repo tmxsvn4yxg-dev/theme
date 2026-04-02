@@ -5,10 +5,9 @@ length=$(echo -n "$HOSTNAME" | wc -c)
 
 setopt PROMPT_SUBST
 get_ip() {
-  if [[ -n "$(ifconfig tun0 2>/dev/null)" ]]; then
-    echo "%{$fg[green]%}$(ifconfig tun0 | awk '/inet / {print $2}')%{$reset_color%}"
-  elif [[ -n "$(ifconfig wlan0 2>/dev/null)" ]]; then
-    echo "%{$fg[green]%}$(ifconfig wlan0 | awk '/inet / {print $2}')%{$reset_color%}"
+  ip=$(ipconfig getifaddr en0 2>/dev/null)
+  if [[ -n "$ip" ]]; then
+    echo "%{$fg[green]%}$Adresse ip trouvée mais cachée%{$reset_color%}"
   else
     echo "%{$fg[red]%}No IP%{$reset_color%}"
   fi
@@ -77,15 +76,30 @@ RPROMPT='%(?..'"${RED}Exit %?"')'
 # host=$(hostname)
 
 # echo '   Welcome to Macos'| lolcat
-#  echo -e ${Blue} "┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┓"
-#  echo -e ${Blue} "┃                                                                 ┃ ${Cyan}  ${BRed}${USER} on ${host} ${Blue}┃ ${BGreen}  ${BYellow}  ${Blue}┃"${RESET_COLOR}
-#  echo -e ${Blue} "┃ ██╗ ██╗    ██╗ ██╗   █████╗  ██╗     ██╗       ██████╗ ███████╗ ┣━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━┫"${RESET_COLOR}
-#  echo -e ${Blue} "┃████████╗   ██║██╔╝  ██╔══██╗ ██║     ██║      ██╔═══██╗██╔════╝ ┃                             ┃"${RESET_COLOR}
-#  echo -e ${Blue} "┃╚██╔═██╔╝   ████╔╝   ███████║ ██║     ██║      ██║   ██║███████╗ ┃ ${Cyan}  ${Blue}@author : ${BIGreen}YAJ     ${Blue}       ┃"${RESET_COLOR}
-#  echo -e ${Blue} "┃████████╗   ██║██╗   ██╔══██║ ██║     ██║      ██║   ██║╚════██║ ┃ ${Cyan}  ${Blue}Developed by : ${BIGreen}YAJ       ${Blue}┃"${RESET_COLOR}
-#  echo -e ${Blue} "┃╚██╔═██╔╝   ██║ ███╗ ██║  ██║ ██████╗ ██║      ╚██████╔╝███████║ ┃ ${Cyan}  ${Blue}GitHub : ${BIGreen}@JeffreyYAJ    ${Blue} ┃"${RESET_COLOR}
-#  echo -e ${Blue} "┃ ╚═╝ ╚═╝    ╚═╝ ╚══╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝       ╚═════╝ ╚══════╝ ┃                             ┃"${RESET_COLOR}
-#  echo -e ${Blue} "┃                                                                 ┃                             ┃"${RESET_COLOR}
-#  echo -e ${Blue} "┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"${RESET_COLOR}
+echo "                        .8"
+echo "                      .888"
+echo "                    .8888'"
+echo "                   .8888'"
+echo "                   888'"
+echo "                   8'"
+echo "      .88888888888. .88888888888."
+echo "   .8888888888888888888888888888888."
+echo " .8888888888888888888888888888888888."
+echo ".&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&'"
+echo "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&'"
+echo "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&'"
+echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@:"
+echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@:"
+echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@:"
+echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%."
+echo "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%."
+echo "\`%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%."
+echo " \`00000000000000000000000000000000000'"
+echo "  \`000000000000000000000000000000000'"
+echo "   \`0000000000000000000000000000000'"
+echo "     \`###########################'"
+echo "jgs    \`#######################'"
+echo "         \`#########''########'"
+echo "           \`\"\"\"\"\"\"'  \`\"\"\"\"\"'"
 
 #  echo -e "   Welcome back ${BIGreen}Master.${USER} ${RESET_COLOR}\n" | lolcat
